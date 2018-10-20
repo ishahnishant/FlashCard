@@ -1,4 +1,4 @@
-#Flash Card App
+# Flash Card App
 An android app that displays a question and three option choices for answer. Users can click on the option to reveal answer
 
 # Lab 1 : 
@@ -18,4 +18,4 @@ An android app that displays a question and three option choices for answer. Use
 - [x] Further customize and style the card
 - [x] Add a button that will toggle hiding and showing the answer choices
 
-<img src="https://i.imgur.com/JZcyjDO.gif" width="200" height="400" />  
+<img src="https://i.imgur.com/JZcyjDO.gif" />  
