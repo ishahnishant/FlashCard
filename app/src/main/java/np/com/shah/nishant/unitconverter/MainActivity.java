@@ -29,4 +29,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void hide(View v) {
+        findViewById(R.id.noeye).setVisibility(View.INVISIBLE);
+        findViewById(R.id.eye).setVisibility(View.VISIBLE);
+        findViewById(R.id.flashcard_option2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.flashcard_option1).setVisibility(View.INVISIBLE);
+        findViewById(R.id.flashcard_answer).setVisibility(View.INVISIBLE);
+
+    }
+
+    public void show(View v) {
+        findViewById(R.id.noeye).setVisibility(View.VISIBLE);
+        findViewById(R.id.eye).setVisibility(View.INVISIBLE);
+        findViewById(R.id.flashcard_option2).setVisibility(View.VISIBLE);
+        findViewById(R.id.flashcard_option1).setVisibility(View.VISIBLE);
+        findViewById(R.id.flashcard_answer).setVisibility(View.VISIBLE);
+
+    }
+
 }

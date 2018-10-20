@@ -9,17 +9,17 @@
     <TextView
         android:id="@+id/flashcard_option2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="131dp"
         android:background="@drawable/flashcard_options"
         android:fontFamily="casual"
+        android:onClick="checkOpt2"
         android:text="New Zealand"
         android:textAlignment="center"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:onClick="checkOpt2"
         android:typeface="sans" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:background="@drawable/flashcard_question_background"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:text="Where is the highest mountain in the world?"
+        android:text="Which is the birthplace of Gautam Buddha?"
         android:textAlignment="center"
         android:textSize="50dp"
 
@@ -42,16 +42,16 @@
     <TextView
         android:id="@+id/flashcard_option1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="53dp"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="236dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="216dp"
         android:background="@drawable/flashcard_options"
+
         android:fontFamily="casual"
         android:onClick="checkOpt1"
         android:text="USA"
         android:textAlignment="center"
-
         android:textSize="40dp"
         android:textStyle="bold"
         android:typeface="sans" />
@@ -59,10 +59,9 @@
     <TextView
         android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="55dp"
+        android:layout_above="@+id/flashcard_option2"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="134dp"
         android:background="@drawable/flashcard_options"
         android:fontFamily="casual"
         android:onClick="checkAns"
@@ -71,5 +70,28 @@
         android:textSize="40dp"
         android:textStyle="bold"
         android:typeface="sans" />
+
+    <ImageView
+        android:id="@+id/eye"
+        android:layout_width="70dp"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:onClick="show"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_iconmonstr_eye_3" />
+
+    <ImageView
+        android:id="@+id/noeye"
+
+        android:layout_width="69dp"
+        android:layout_height="55dp"
+        android:layout_alignStart="@+id/eye"
+        android:layout_alignTop="@+id/eye"
+        android:onClick="hide"
+        app:srcCompat="@drawable/ic_noeye" />
+    "
+    />
 
 </RelativeLayout>
