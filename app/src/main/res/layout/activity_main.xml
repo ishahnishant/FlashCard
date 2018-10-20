@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/flashcard_option2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/flashcard_options"
+        android:fontFamily="casual"
+        android:text="New Zealand"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:onClick="checkOpt2"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/flashcard_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/flashcard_question_background"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Where is the highest mountain in the world?"
+        android:textAlignment="center"
+        android:textSize="50dp"
+
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/flashcard_option1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/flashcard_options"
+        android:fontFamily="casual"
+        android:onClick="checkOpt1"
+        android:text="USA"
+        android:textAlignment="center"
+
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/flashcard_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="134dp"
+        android:background="@drawable/flashcard_options"
+        android:fontFamily="casual"
+        android:onClick="checkAns"
+        android:text="Nepal"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+</RelativeLayout>
