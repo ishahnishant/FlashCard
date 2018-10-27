@@ -91,6 +91,16 @@
         android:layout_alignTop="@+id/eye"
         android:onClick="hide"
         app:srcCompat="@drawable/ic_noeye" />
+
+    <ImageView
+        android:id="@+id/addButton"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/eye"
+        android:layout_marginEnd="28dp"
+        android:onClick="newActivity"
+        app:srcCompat="@drawable/add" />
     "
     />
 

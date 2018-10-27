@@ -1,5 +1,6 @@
 package np.com.shah.nishant.unitconverter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -46,5 +47,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.flashcard_answer).setVisibility(View.VISIBLE);
 
     }
+
+    public void newActivity(View v) {
+        Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+
 
 }
