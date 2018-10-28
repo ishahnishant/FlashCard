@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,7 +12,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 100) { // this 100 needs to match the 100 we used when we called startActivityForResult!
+            String newQuestion = getIntent().getStringExtra("keyQuestion");
+            String newAns = getIntent().getStringExtra("keyAns");
+
+            TextView newQ = (TextView) findViewById(R.id.flashcard_question);
+            newQ.setText(newQuestion);
+        }
+    }
+
+}
+
 
     public void checkAns(View view){
         findViewById(R.id.flashcard_answer).setBackground(getDrawable(R.drawable.flashcard_green));
@@ -52,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
         MainActivity.this.startActivity(intent);
     }
-
 
 
 }

@@ -12,7 +12,7 @@
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="131dp"
+        android:layout_marginBottom="167dp"
         android:background="@drawable/flashcard_options"
         android:fontFamily="casual"
         android:onClick="checkOpt2"
@@ -22,7 +22,7 @@
         android:textStyle="bold"
         android:typeface="sans" />
 
-    <TextView
+    <EditText
         android:id="@+id/flashcard_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,9 +32,9 @@
         android:background="@drawable/flashcard_question_background"
         android:fontFamily="cursive"
         android:gravity="center"
-        android:text="Which is the birthplace of Gautam Buddha?"
+        android:text="@string/birthplaceBudhha"
         android:textAlignment="center"
-        android:textSize="50dp"
+        android:textSize="50sp"
 
         android:textStyle="bold"
         android:typeface="sans" />
@@ -60,8 +60,9 @@
         android:id="@+id/flashcard_answer"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_above="@+id/flashcard_option2"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="236dp"
         android:background="@drawable/flashcard_options"
         android:fontFamily="casual"
         android:onClick="checkAns"
