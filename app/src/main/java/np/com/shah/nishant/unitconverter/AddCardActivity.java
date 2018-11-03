@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddCardActivity extends AppCompatActivity {
 
@@ -40,6 +41,7 @@ public class AddCardActivity extends AppCompatActivity {
 
     public void saveCard(View v) {
         //Creating a TextView to set Question
+
         EditText newQ = (EditText) findViewById(R.id.addQuestion);
         String newQuestion = newQ.getText().toString();
 
@@ -53,16 +55,21 @@ public class AddCardActivity extends AppCompatActivity {
         EditText wrongAns2 = (EditText) findViewById(R.id.wrongAns2);
         String ansWrong2 = wrongAns2.getText().toString();
 
-
-        Intent data = new Intent();
-        data.putExtra("keyQuestion", newQuestion);
-        data.putExtra("keyAns", answerNew);
-        data.putExtra("keyWrongAns1", ansWrong1);
-        data.putExtra("keyWrongAns2", ansWrong2);
-        setResult(RESULT_OK, data);
-        finish();
+        if (newQuestion.matches("") || answerNew.matches("") || ansWrong1.matches("") || ansWrong2.matches("")) {
+            Toast.makeText(getApplicationContext(), "No fields can be empty", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
 
 
+            Intent data = new Intent();
+            data.putExtra("keyQuestion", newQuestion);
+            data.putExtra("keyAns", answerNew);
+            data.putExtra("keyWrongAns1", ansWrong1);
+            data.putExtra("keyWrongAns2", ansWrong2);
+            setResult(RESULT_OK, data);
+            finish();
+
+        }
     }
 
     }
