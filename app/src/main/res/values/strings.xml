@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Unit Converter</string>
     <string name="addQuestion">Your Question</string>
-    <string name="addAns">Answer</string>
+    <string name="addAns">Correct Answer</string>
     <string name="save" />
     <string name="birthplaceBudhha">Which is the birthplace of Gautam Budhha?</string>
+    <string name="wrongAns">Wrong Answer</string>
 </resources>

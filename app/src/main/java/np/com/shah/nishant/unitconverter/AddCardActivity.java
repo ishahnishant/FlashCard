@@ -24,6 +24,11 @@ public class AddCardActivity extends AppCompatActivity {
         EditText newAns = (EditText) findViewById(R.id.addAns);
         newAns.setText(newA);
 
+        EditText wrongA1 = (EditText) findViewById(R.id.wrongAns1);
+        wrongA1.setText(newO1);
+
+        EditText wrongA2 = (EditText) findViewById(R.id.wrongAns2);
+        wrongA2.setText(newO2);
 
 
     }
@@ -42,22 +47,26 @@ public class AddCardActivity extends AppCompatActivity {
         EditText ans = (EditText) findViewById(R.id.addAns);
         String answerNew = ans.getText().toString();
 
+        EditText wrongAns1 = (EditText) findViewById(R.id.wrongAns1);
+        String ansWrong1 = wrongAns1.getText().toString();
+
+        EditText wrongAns2 = (EditText) findViewById(R.id.wrongAns2);
+        String ansWrong2 = wrongAns2.getText().toString();
+
 
         Intent data = new Intent();
         data.putExtra("keyQuestion", newQuestion);
         data.putExtra("keyAns", answerNew);
+        data.putExtra("keyWrongAns1", ansWrong1);
+        data.putExtra("keyWrongAns2", ansWrong2);
         setResult(RESULT_OK, data);
         finish();
 
 
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent editData) {
-
-
     }
 
 
-}
+
 

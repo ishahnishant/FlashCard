@@ -84,32 +84,34 @@
     <ImageView
         android:id="@+id/noeye"
 
-        android:layout_width="69dp"
-        android:layout_height="55dp"
-        android:layout_alignStart="@+id/eye"
-        android:layout_alignTop="@+id/eye"
+        android:layout_width="66dp"
+        android:layout_height="52dp"
+        android:layout_alignTop="@+id/addButton"
+        android:layout_centerHorizontal="true"
         android:onClick="hide"
         app:srcCompat="@drawable/ic_noeye" />
 
     <ImageView
         android:id="@+id/addButton"
-        android:layout_width="47dp"
-        android:layout_height="46dp"
+        android:layout_width="51dp"
+        android:layout_height="53dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/eye"
         android:layout_marginEnd="28dp"
+        android:layout_marginTop="-7dp"
         android:onClick="newActivity"
-        app:srcCompat="@drawable/add" />
+        app:srcCompat="@drawable/round_add_circle_24px" />
 
     <ImageView
         android:id="@+id/editCard"
         android:layout_width="60dp"
-        android:layout_height="52dp"
+        android:layout_height="48dp"
         android:layout_alignBottom="@+id/addButton"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="4dp"
         android:layout_marginStart="13dp"
         android:onClick="newActivity"
-        app:srcCompat="@drawable/ic_edit" />
+        app:srcCompat="@drawable/round_create_24px" />
     "
     />
 

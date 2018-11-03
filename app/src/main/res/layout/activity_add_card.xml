@@ -9,15 +9,15 @@
 
     <ImageView
         android:id="@+id/cross"
-        android:layout_width="49dp"
-        android:layout_height="55dp"
+        android:layout_width="59dp"
+        android:layout_height="57dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="33dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="29dp"
         android:contentDescription="@+string/closeActivity"
         android:onClick="closeActivity"
-        app:srcCompat="@drawable/cross" />
+        app:srcCompat="@drawable/round_cancel_24px" />
 
     <EditText
         android:id="@+id/addQuestion"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="119dp"
+        android:layout_marginTop="49dp"
         android:ems="10"
         android:hint="@string/addQuestion"
         android:inputType="text"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="182dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
         android:hint="@string/addAns"
         android:inputType="text"
@@ -45,12 +45,36 @@
 
     <ImageView
         android:id="@+id/saveButton"
-        android:layout_width="68dp"
-        android:layout_height="57dp"
+        android:layout_width="83dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/cross"
-        android:layout_marginStart="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
         android:contentDescription="@string/save"
         android:onClick="saveCard"
-        app:srcCompat="@drawable/save" />
+        app:srcCompat="@drawable/round_save_alt_24px" />
+
+    <EditText
+        android:id="@+id/wrongAns1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:ems="10"
+        android:hint="Wrong Answer"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/wrongAns2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="@string/wrongAns"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 </RelativeLayout>

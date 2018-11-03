@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 100 && data != null && resultCode == RESULT_OK) { // this 100 needs to match the 100 we used when we called startActivityForResult!
             String newQuestion = data.getStringExtra("keyQuestion");
             String newAns = data.getExtras().getString("keyAns");
+            String newO1 = data.getExtras().getString("keyWrongAns1");
+            String newO2 = data.getExtras().getString("keyWrongAns2");
 
             //Setting question to our flashcard
             TextView newQ = (TextView) findViewById(R.id.flashcard_question);
@@ -29,12 +32,23 @@ public class MainActivity extends AppCompatActivity {
 
             TextView newA = (TextView) findViewById(R.id.flashcard_answer);
             newA.setText(newAns);
+            newA.setVisibility(View.INVISIBLE);
 
             TextView opt1 = (TextView) findViewById(R.id.flashcard_option1);
+            opt1.setText(newO1);
             opt1.setVisibility(View.INVISIBLE);
 
+
             TextView opt2 = (TextView) findViewById(R.id.flashcard_option2);
+            opt2.setText(newO2);
             opt2.setVisibility(View.INVISIBLE);
+
+            ImageView newNoEye = (ImageView) findViewById(R.id.noeye);
+            newNoEye.setVisibility(View.INVISIBLE);
+
+            ImageView newEye = (ImageView) findViewById(R.id.eye);
+            newEye.setVisibility(View.VISIBLE);
+
 
         }
     }
@@ -87,10 +101,10 @@ public class MainActivity extends AppCompatActivity {
         String newA = A.getText().toString();
 
         TextView O1 = (TextView) findViewById(R.id.flashcard_option1);
-        String newO1 = Q.getText().toString();
+        String newO1 = O1.getText().toString();
 
         TextView O2 = (TextView) findViewById(R.id.flashcard_option2);
-        String newO2 = Q.getText().toString();
+        String newO2 = O2.getText().toString();
 
         intent.putExtra("keyQ", newQ);
         intent.putExtra("keyA", newA);
@@ -100,28 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* public void editCard(View v) {
-        Intent editData = new Intent();
-        TextView Q = (TextView) findViewById(R.id.flashcard_question);
-        String newQ = Q.getText().toString();
 
-        TextView A = (TextView) findViewById(R.id.flashcard_answer);
-        String newA = Q.getText().toString();
-
-        TextView O1 = (TextView) findViewById(R.id.flashcard_option1);
-        String newO1 = Q.getText().toString();
-
-        TextView O2 = (TextView) findViewById(R.id.flashcard_option2);
-        String newO2 = Q.getText().toString();
-
-
-        editData.putExtra("keyQ", newQ);
-        editData.putExtra("keyA", newA);
-        editData.putExtra("keyO1", newO1);
-        editData.putExtra("keyO2", newO2);
-        setResult(RESULT_OK, editData);
-        finish();
-    }
-*/
 
 }
