@@ -16,18 +16,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        if (requestCode == 100) { // this 100 needs to match the 100 we used when we called startActivityForResult!
-            String newQuestion = getIntent().getStringExtra("keyQuestion");
-            String newAns = getIntent().getStringExtra("keyAns");
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 100) { // this 100 needs to match the 100 we used when we called startActivityForResult!
+            String newQuestion = data.getStringExtra("keyQuestion");
+            String newAns = data.getExtras().getString("keyAns");
+
+            //Setting question to our flashcard
             TextView newQ = (TextView) findViewById(R.id.flashcard_question);
             newQ.setText(newQuestion);
+
+            TextView newA = (TextView) findViewById(R.id.flashcard_answer);
+            newA.setText(newAns);
+
+            TextView opt1 = (TextView) findViewById(R.id.flashcard_option1);
+            opt1.setVisibility(View.INVISIBLE);
+
+            TextView opt2 = (TextView) findViewById(R.id.flashcard_option2);
+            opt2.setVisibility(View.INVISIBLE);
+
         }
     }
 
-}
 
 
     public void checkAns(View view){
@@ -67,7 +78,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void newActivity(View v) {
         Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
-        MainActivity.this.startActivity(intent);
+        MainActivity.this.startActivityForResult(intent, 100);
+    }
+
+    public void editCard(View v) {
+        Intent editData = new Intent();
+        TextView Q = (TextView) findViewById(R.id.flashcard_question);
+        String newQ = Q.getText().toString();
+
+        TextView A = (TextView) findViewById(R.id.flashcard_answer);
+        String newA = Q.getText().toString();
+
+        TextView O1 = (TextView) findViewById(R.id.flashcard_option1);
+        String newO1 = Q.getText().toString();
+
+        TextView O2 = (TextView) findViewById(R.id.flashcard_option2);
+        String newO2 = Q.getText().toString();
+
+
+        editData.putExtra("keyQ", newQ);
+        editData.putExtra("keyA", newA);
+        editData.putExtra("keyO1", newO1);
+        editData.putExtra("keyO2", newO2);
+        setResult(RESULT_OK, editData);
+        finish();
     }
 
 

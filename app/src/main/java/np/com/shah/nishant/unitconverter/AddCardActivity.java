@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class AddCardActivity extends AppCompatActivity {
 
@@ -12,6 +12,16 @@ public class AddCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
+
+        String newQ = getIntent().getStringExtra("keyQ");
+        String newA = getIntent().getStringExtra("keyA");
+        String newO1 = getIntent().getStringExtra("keyO1");
+        String newO2 = getIntent().getStringExtra("keyO2");
+
+        EditText newQu = (EditText) findViewById(R.id.addQuestion);
+        newQu.setText(newQ);
+
+
     }
 
 
@@ -20,27 +30,28 @@ public class AddCardActivity extends AppCompatActivity {
     }
 
     public void saveCard(View v) {
-        //Stores the Question
-
-
-        //Creating a static TextView to set Question
-        TextView newQ = (TextView) findViewById(R.id.addQuestion);
+        //Creating a TextView to set Question
+        EditText newQ = (EditText) findViewById(R.id.addQuestion);
         String newQuestion = newQ.getText().toString();
 
         //Store Ans
-        TextView ans = (TextView) findViewById(R.id.addAns);
+        EditText ans = (EditText) findViewById(R.id.addAns);
         String answerNew = ans.getText().toString();
 
-        //Setting the Question to MainActivity
-        //TextView show = (TextView)findViewById(R.id.flashcard_question);
-        //show.setText(String.valueOf(newQuestion));
+
+        Intent data = new Intent();
+        data.putExtra("keyQuestion", newQuestion);
+        data.putExtra("keyAns", answerNew);
+        setResult(RESULT_OK, data);
+        finish();
 
 
-        Intent intent = new Intent(AddCardActivity.this, MainActivity.class);
-        intent.putExtra("keyQuestion", newQuestion);
-        intent.putExtra("keyAns", answerNew);
+    }
 
-        AddCardActivity.this.startActivityForResult(intent, 200);
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent editData) {
+
+
     }
 
 
