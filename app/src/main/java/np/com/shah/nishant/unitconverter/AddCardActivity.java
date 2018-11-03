@@ -21,6 +21,10 @@ public class AddCardActivity extends AppCompatActivity {
         EditText newQu = (EditText) findViewById(R.id.addQuestion);
         newQu.setText(newQ);
 
+        EditText newAns = (EditText) findViewById(R.id.addAns);
+        newAns.setText(newA);
+
+
 
     }
 

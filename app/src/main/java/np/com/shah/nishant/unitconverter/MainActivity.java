@@ -78,10 +78,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void newActivity(View v) {
         Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
+
+
+        TextView Q = (TextView) findViewById(R.id.flashcard_question);
+        String newQ = Q.getText().toString();
+
+        TextView A = (TextView) findViewById(R.id.flashcard_answer);
+        String newA = A.getText().toString();
+
+        TextView O1 = (TextView) findViewById(R.id.flashcard_option1);
+        String newO1 = Q.getText().toString();
+
+        TextView O2 = (TextView) findViewById(R.id.flashcard_option2);
+        String newO2 = Q.getText().toString();
+
+        intent.putExtra("keyQ", newQ);
+        intent.putExtra("keyA", newA);
+        intent.putExtra("keyO1", newO1);
+        intent.putExtra("keyO2", newO2);
         MainActivity.this.startActivityForResult(intent, 100);
+
     }
 
-    public void editCard(View v) {
+   /* public void editCard(View v) {
         Intent editData = new Intent();
         TextView Q = (TextView) findViewById(R.id.flashcard_question);
         String newQ = Q.getText().toString();
@@ -103,6 +122,6 @@ public class MainActivity extends AppCompatActivity {
         setResult(RESULT_OK, editData);
         finish();
     }
-
+*/
 
 }
