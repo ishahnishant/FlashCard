@@ -34,14 +34,17 @@ public class MainActivity extends AppCompatActivity {
             TextView newA = (TextView) findViewById(R.id.flashcard_answer);
             newA.setText(newAns);
             newA.setVisibility(View.INVISIBLE);
+            newA.setBackground(getDrawable(R.drawable.flashcard_options));
 
             TextView opt1 = (TextView) findViewById(R.id.flashcard_option1);
             opt1.setText(newO1);
+            opt1.setBackground(getDrawable(R.drawable.flashcard_options));
             opt1.setVisibility(View.INVISIBLE);
 
 
             TextView opt2 = (TextView) findViewById(R.id.flashcard_option2);
             opt2.setText(newO2);
+            opt2.setBackground(getDrawable(R.drawable.flashcard_options));
             opt2.setVisibility(View.INVISIBLE);
 
             ImageView newNoEye = (ImageView) findViewById(R.id.noeye);
