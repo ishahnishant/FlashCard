@@ -10,14 +10,16 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    FlashcardDatabase flashcardDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
 
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
