@@ -4,10 +4,10 @@ An android app that displays a question and three option choices for answer. Use
 ## Lab 2
 
 ### App Description
-FlashCard Application which let's users add flashcard, edit existing flashcard and toggles with options.
+FlashCard Application which let's users add flashcard, edit existing flashcard, add multiple choice options and toggles visiblity of options.
 
 ### App Walk-though
-<img src="https://i.imgur.com/NUms5oE.gif" width=200><br>
+<img src="https://i.imgur.com/5VD6Dnm.gif" width=300><br>
 
 ## Required
 - [x] User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
@@ -18,10 +18,10 @@ FlashCard Application which let's users add flashcard, edit existing flashcard a
 
 ## Optional
 - [x] User can edit a card
-- [ ] An error message is shown if the user doesn't enter both a Question and an Answer
-- [ ] A notification is shown if the card was created successfully
-- [ ] User can also enter multiple choice answers when creating a card
-- [ ] App is further styled and customized!
+- [x] An error message is shown if the user doesn't enter both a Question and an Answer
+- [x] A notification is shown if the card was created successfully
+- [x] User can also enter multiple choice answers when creating a card
+- [x] App is further styled and customized!
 
 
 # Lab 1 : 
