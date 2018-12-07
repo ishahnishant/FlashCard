@@ -8,9 +8,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     FlashcardDatabase flashcardDatabase;
+
+    List<Flashcard> allFlashcards;
+    int currentCardDisplayedIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
+        allFlashcards = flashcardDatabase.getAllCards();
+
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
+        }
 
     }
 
@@ -60,8 +71,29 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.LENGTH_SHORT)
                     .show();
 
+            flashcardDatabase.insertCard(new Flashcard(newQuestion, newAns));
 
         }
+
+
+    }
+
+    public void nextB(View v) {
+        currentCardDisplayedIndex++;
+
+        if (currentCardDisplayedIndex > allFlashcards.size() - 1) {
+            currentCardDisplayedIndex = 0;
+        }
+
+
+        findViewById(R.id.flashcard_answer).setBackground(getDrawable(R.drawable.flashcard_question_background));
+        findViewById(R.id.flashcard_option1).setBackground(getDrawable(R.drawable.flashcard_question_background));
+        findViewById(R.id.flashcard_option2).setBackground(getDrawable(R.drawable.flashcard_question_background));
+
+
+        ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+        ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+
     }
 
 
