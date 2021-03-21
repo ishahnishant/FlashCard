@@ -41,4 +41,4 @@ FlashCard Application which let's users add flashcard, edit existing flashcard, 
 - [x] Further customize and style the card
 - [x] Add a button that will toggle hiding and showing the answer choices
 
-<img src="https://drive.google.com/file/d/1fSLXwWdCaoBxcQVUML4-NeFYAAygKCIR/preview" width="640" height="480"></img>  
+<img src="https://drive.google.com/uc?id=1fSLXwWdCaoBxcQVUML4-NeFYAAygKCIR" ></img><br>
