@@ -7,7 +7,7 @@ An android app that displays a question and three option choices for answer. Use
 FlashCard Application which let's users add flashcard, edit existing flashcard, add multiple choice options and toggles visiblity of options.
 
 ### App Walk-though
-<img src="https://drive.google.com/file/d/1fSLXwWdCaoBxcQVUML4-NeFYAAygKCIR/preview" width="640" height="480"></img><br>
+<img src="https://drive.google.com/file/d/1fSLXwWdCaoBxcQVUML4-NeFYAAygKCIR" width="640" height="480"></img><br>
 
 ## Required
 - [x] User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
